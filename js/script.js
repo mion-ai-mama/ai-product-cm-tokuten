@@ -21,29 +21,28 @@
     setMeta('meta[property="og:url"]', m.siteUrl);
   }
 
+  function videoBlock(v) {
+    return `
+      <div class="hero__video">
+        <h2 class="sub-heading">${v.heading}</h2>
+        <video controls playsinline preload="metadata" poster="${esc(v.poster)}" aria-label="${esc(v.label)}" width="${v.width}" height="${v.height}">
+          <source src="${esc(v.src)}" type="video/mp4">
+        </video>
+        ${v.caption ? `<p class="hero__caption">${v.caption}</p>` : ""}
+      </div>`;
+  }
+
+  // バナー → 解説動画（あれば）→ 完成CM → ボタン
   function hero(h) {
-    const avatar = h.avatar
-      ? `<div class="hero__author"><img class="hero__avatar" src="${esc(h.avatar.src)}" alt="${esc(h.avatar.alt)}" width="56" height="56"><span class="hero__name">${h.avatar.name}</span></div>`
-      : "";
-    const visual = h.visual
-      ? `<div class="hero__visual"><img src="${esc(h.visual.src)}" alt="${esc(h.visual.alt)}"></div>`
-      : "";
-    const video = h.video
-      ? `<figure class="hero__video"><video controls playsinline preload="metadata" poster="${esc(h.video.poster)}" width="${h.video.width}" height="${h.video.height}"><source src="${esc(h.video.src)}" type="video/mp4"></video><figcaption>${h.video.label}</figcaption></figure>`
-      : "";
     return `
     <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero__inner${h.visual ? " hero__inner--visual" : ""}">
-        <div class="hero__text">
-          <p class="hero__brand">${h.brand}</p>
-          <h1 class="hero__title" id="hero-title">${h.titleLines.join("<br>")}</h1>
-          <p class="hero__lead">${h.lead}</p>
-          ${avatar}
-          <a class="btn btn--ghost" href="#${esc(h.buttonTarget)}" data-scroll>${h.buttonText}</a>
-        </div>
-        ${visual}
+      <div class="container hero__stack">
+        <h1 class="visually-hidden" id="hero-title">${h.titleLines.join(" ")}</h1>
+        <figure class="hero__banner"><img src="${esc(h.image.src)}" alt="${esc(h.image.alt)}" width="1080" height="1080"></figure>
+        ${h.tutorial ? videoBlock(h.tutorial) : ""}
+        ${h.video ? videoBlock(h.video) : ""}
+        <a class="btn btn--ghost" href="#${esc(h.buttonTarget)}" data-scroll>${h.buttonText}</a>
       </div>
-      ${video ? `<div class="container">${video}</div>` : ""}
     </section>`;
   }
 

@@ -219,10 +219,15 @@ a:focus-visible, button:focus-visible {
 /* 淡い背景の上ではポイントボックスを白にして輪郭を出す */
 .section--soft .point-box { background: #fff; }
 
-/* ---------- 完成CM動画（ファーストビュー） ---------- */
-.hero__video { margin: 32px 0 0; }
-.hero__video video { width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; border-radius: var(--radius-m); }
-.hero__video figcaption { margin-top: 10px; text-align: center; font-size: 14px; color: var(--c-muted); }
+/* ---------- ファーストビュー：バナー・動画 ---------- */
+.hero { padding-top: 24px; }
+.hero__stack { display: grid; gap: 28px; justify-items: center; }
+.hero__banner { margin: 0; width: 100%; max-width: 560px; }
+.hero__banner img { width: 100%; height: auto; border-radius: var(--radius-m); border: 1px solid var(--c-line); }
+.hero__video { width: 100%; max-width: 640px; }
+.hero__video .sub-heading { margin: 0 0 10px; text-align: center; font-family: var(--font-serif); font-size: 19px; color: var(--c-ink); }
+.hero__video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000; border-radius: var(--radius-m); border: 1px solid var(--c-line); }
+.hero__caption { margin: 10px 0 0; text-align: center; font-size: 14px; color: var(--c-muted); }
 
 /* ---------- プロンプト内の書き換え箇所・出典・まとめ補足 ---------- */
 .prompt + .prompt { margin-top: 20px; }
@@ -262,9 +267,6 @@ a:focus-visible, button:focus-visible {
 .solve__give { margin: 0; padding: 12px 16px 14px; font-size: 15px; color: var(--c-ink); text-align: left; }
 .solve__give::before { content: "→ "; color: var(--c-taupe); font-weight: 700; }
 
-@media (min-width: 768px) {
-  .hero__video { margin-top: 40px; }
-}
 
 /* 長いプロンプトは折りたたむ（コピーボタンは常に表示） */
 .prompt__fold { margin-bottom: 16px; }

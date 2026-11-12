@@ -19,21 +19,28 @@ const CONTENT = {
 
   // SECTION 01：ファーストビュー
   hero: {
-    brand: "MION AI GUIDE",
     titleLines: ["みおん式AI副業ノート", "商品CM動画編"],
-    lead: "スマホで撮った商品写真1枚から、<br>10秒のCM動画をつくる方法",
-    buttonText: "さっそく読む",
-    buttonTarget: "step1",
-    avatar: null,
-    visual: null,
+    image: {
+      src: "assets/images/banner-1x1.jpg",
+      alt: "みおん式AI副業ノート 商品CM動画編。商品写真1枚から作る10秒CM動画スタートガイド。右上にスマホを持つみおんさんのイラスト、下に完成したパルファムオイルのCM動画の場面が3枚並んでいる",
+    },
+    // 解説動画（ご本人が撮影した操作解説）。動画ができたら assets/video/tutorial.mp4 と
+    // tutorial-poster.jpg を置いて、null を下のオブジェクトに置き換える。
+    // { heading: "解説動画", src: "assets/video/tutorial.mp4", poster: "assets/video/tutorial-poster.jpg",
+    //   width: 1280, height: 720, label: "…", caption: null }
+    tutorial: null,
     // 完成したCM（実際に作った動画）
     video: {
+      heading: "完成したCM",
       src: "assets/video/cm.mp4",
       poster: "assets/images/cm-poster.jpg",
       width: 1280,
       height: 720,
-      label: "この動画が、写真1枚からできあがります",
+      label: "商品写真1枚から作った、パルファムオイルの10秒CM動画",
+      caption: "この動画が、写真1枚からできあがります。",
     },
+    buttonText: "さっそく読む",
+    buttonTarget: "step1",
   },
 
   // SECTION 02：冒頭CTA
