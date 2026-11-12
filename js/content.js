@@ -82,6 +82,7 @@ const CONTENT = {
           src: "assets/images/product-photo.jpg",
           alt: "洗面台に置かれた、黒いキャップのフロストガラスのボトル。PARFUM OIL、Hair&Body、3.4 fl oz / 100ml と書かれている",
           caption: "この写真1枚から、CM動画を作りました。",
+          size: "small",
         },
       ],
       prompts: [],

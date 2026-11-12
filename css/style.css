@@ -272,3 +272,7 @@ a:focus-visible, button:focus-visible {
 .prompt__fold { margin-bottom: 16px; }
 .prompt__fold summary { cursor: pointer; padding: 10px 0; font-size: 14.5px; font-weight: 700; color: var(--c-taupe); }
 .prompt__fold .prompt__text { margin-bottom: 0; }
+
+/* 縦長の商品写真などは小さめに中央表示 */
+.figure--small { max-width: 240px; margin-left: auto; margin-right: auto; }
+.figure--small figcaption { text-align: center; }

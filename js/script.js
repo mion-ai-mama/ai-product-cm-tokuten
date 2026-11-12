@@ -81,7 +81,7 @@
     const img = `<img src="${esc(f.src)}" alt="${esc(f.alt)}" loading="lazy">`;
     const body = f.zoom ? `<a href="${esc(f.src)}" target="_blank" rel="noopener">${img}</a>` : img;
     const hint = f.zoom ? "（タップで拡大）" : "";
-    return `<figure class="figure">${body}<figcaption>${f.caption}${hint}</figcaption></figure>`;
+    return `<figure class="figure${f.size ? " figure--" + f.size : ""}">${body}<figcaption>${f.caption}${hint}</figcaption></figure>`;
   }
 
   // 書き換える場所（【 】）を目立たせる
