@@ -276,3 +276,6 @@ a:focus-visible, button:focus-visible {
 /* 縦長の商品写真などは小さめに中央表示 */
 .figure--small { max-width: 240px; margin-left: auto; margin-right: auto; }
 .figure--small figcaption { text-align: center; }
+
+/* 画面収録の解説動画は、画面の文字が読めるよう少し広く表示する */
+.hero__video--wide { max-width: 720px; }

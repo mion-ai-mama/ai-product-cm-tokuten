@@ -24,11 +24,17 @@ const CONTENT = {
       src: "assets/images/banner-1x1.jpg",
       alt: "みおん式AI副業ノート 商品CM動画編。商品写真1枚から作る10秒CM動画スタートガイド。右上にスマホを持つみおんさんのイラスト、下に完成したパルファムオイルのCM動画の場面が3枚並んでいる",
     },
-    // 解説動画（ご本人が撮影した操作解説）。動画ができたら assets/video/tutorial.mp4 と
-    // tutorial-poster.jpg を置いて、null を下のオブジェクトに置き換える。
-    // { heading: "解説動画", src: "assets/video/tutorial.mp4", poster: "assets/video/tutorial-poster.jpg",
-    //   width: 1280, height: 720, label: "…", caption: null }
-    tutorial: null,
+    // 解説動画（本人の声の操作解説・テロップつき。assets/video/tutorial.mp4）
+    tutorial: {
+      heading: "解説動画",
+      src: "assets/video/tutorial.mp4",
+      poster: "assets/video/tutorial-poster.jpg",
+      width: 1920,
+      height: 1584,
+      wide: true,
+      label: "特典ページのプロンプトをコピーし、ChatGPTで絵コンテを作り、Geminiで動画にして保存するまでの解説動画",
+      caption: null,
+    },
     // 完成したCM（実際に作った動画）
     video: {
       heading: "完成したCM",

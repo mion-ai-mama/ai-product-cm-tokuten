@@ -23,9 +23,9 @@
 
   function videoBlock(v) {
     return `
-      <div class="hero__video">
+      <div class="hero__video${v.wide ? " hero__video--wide" : ""}">
         <h2 class="sub-heading">${v.heading}</h2>
-        <video controls playsinline preload="metadata" poster="${esc(v.poster)}" aria-label="${esc(v.label)}" width="${v.width}" height="${v.height}">
+        <video controls playsinline preload="metadata" poster="${esc(v.poster)}" aria-label="${esc(v.label)}" width="${v.width}" height="${v.height}" style="aspect-ratio:${v.width}/${v.height}">
           <source src="${esc(v.src)}" type="video/mp4">
         </video>
         ${v.caption ? `<p class="hero__caption">${v.caption}</p>` : ""}
