@@ -48,7 +48,7 @@
 
   function topCta(c, url) {
     const image = c.image
-      ? `<a class="cta-soft__image" href="${esc(url)}" target="_blank" rel="noopener"><img src="${esc(c.image.src)}" alt="${esc(c.image.alt)}" width="1855" height="848"></a>`
+      ? `<a class="cta-soft__image" href="${esc(url)}" target="_blank" rel="noopener"><img src="${esc(c.image.src)}" alt="${esc(c.image.alt)}" width="1600" height="809"></a>`
       : "";
     return `
     <section class="container" aria-labelledby="top-cta-title">
@@ -148,8 +148,7 @@
 
   // LINE誘導: ①つなぎ(content.js) → ②体験談 → ③選択肢 → ④教科書のメリット → ⑤CTA（②〜⑤は line-cta.js）
   function finalCta(intro, l, url) {
-    const paras = (arr) => arr.map((t) => `<p>${t}</p>`).join("");
-    const questions = l.options.questions.map((q) => `<li>${q}</li>`).join("");
+    const paras = l.story.paras.map((t) => `<p>${t}</p>`).join("");
     const items = l.textbook.items
       .map((it) => `<li class="line-guide__item"><strong>${it.name}</strong><span>${it.benefit}</span></li>`)
       .join("");
@@ -158,12 +157,8 @@
       <div class="container">
         <div class="line-guide">
           <p class="line-guide__intro">${intro}</p>
-          <div class="line-guide__story">${paras(l.story)}</div>
-          <div class="line-guide__options">
-            <p>${l.options.lead}</p>
-            <ul class="line-guide__questions">${questions}</ul>
-            <p>${l.options.closing}</p>
-          </div>
+          <h3 class="line-guide__title">${l.story.heading}</h3>
+          <div class="line-guide__story">${paras}</div>
         </div>
         <div class="cta-final">
           <h2 class="cta-final__title" id="final-cta-title">${l.textbook.heading}</h2>

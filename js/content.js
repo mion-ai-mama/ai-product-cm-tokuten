@@ -55,7 +55,7 @@ const CONTENT = {
     text: "AIを使って、自分の働き方の選択肢を広げたい方に、無料で学べる情報をお届けしています。",
     buttonText: "無料で受け取る →",
     image: {
-      src: "assets/images/textbook-benefits.jpg",
+      src: "assets/images/textbook-benefits.jpg?v=2",
       alt: "AIマネタイズの教科書 5大特典。1 いま一番始めやすいAIマネタイズ手法、2 ChatGPT収益化プロンプト3選、3 AIマネタイズ神テンプレート、4 マネタイズのための生成AIツール3選、5 AI×SNSで収益を生むリアル事例",
     },
   },
@@ -218,7 +218,7 @@ const CONTENT = {
   },
 
   // SECTION 06：LINE誘導のつなぎ（①）。②〜⑤は js/line-cta.js の共通文章
-  lineIntro: "今回紹介したAIのCM動画づくりは、AIを使って商品の動画を作る方法のひとつ。でも、AIでできることは、これだけではありません。",
+  lineIntro: "今回紹介したAIのCM動画づくりは、AIを使って商品の動画を作る方法のひとつです。",
 
   footer: {
     copyright: "© MION",
